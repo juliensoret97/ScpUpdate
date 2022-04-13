@@ -209,7 +209,7 @@ body {
   /* home page */
 
   #card_formation_top {
-    height: 42rem;
+    font-size: 16px;
     }
   #img_card {
     width: 100%;

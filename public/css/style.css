@@ -208,6 +208,29 @@ body {
 @media only screen and (max-width: 600px) {
   /* home page */
 
+  #img_card {
+    width: 100%;
+    height: 100%;  
+  }
+  #big_img_acc {
+    width: 100%;
+    height: 10rem;
+  }
+
+  #home_com{
+    height: 13vh;
+    font-size: 16px;
+  }
+  #home_com2{
+    height: 40vh;
+    
+    font-size: 16px;
+  }
+  
+  .img_home_com{
+    width: 50%;
+    height: 10rem;
+  }
   #cardHome {
     background-color: #2c77bc;
     height: 22rem;

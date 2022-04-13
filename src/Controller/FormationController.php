@@ -64,7 +64,7 @@ class FormationController extends AbstractController
     
             $this->mailer->send($email);
 
-            return $this->redirectToRoute('formation_scp');
+            return $this->redirectToRoute('formation_scp_index');
         }
 
         return $this->render('formation/new.html.twig', [

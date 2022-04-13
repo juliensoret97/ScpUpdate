@@ -1,0 +1,11 @@
+{% extends 'adminbase.html.twig' %}
+
+{% block title %}ADMIN{% endblock %}
+
+{% block body %}
+    <h1>Créer une formation :</h1>
+
+    {{ include('formation_scp/_form.html.twig') }}
+
+    <a href="{{ path('formation_scp_index') }}">back to list</a>
+{% endblock %}

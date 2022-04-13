@@ -1,0 +1,136 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	SCP Formation
+{% endblock %}
+
+{% block body %}
+	<section class="sectiontophome">
+		<h1 class="m-3" style="color:white">
+			Formations actuellement en cours !
+		</h1>
+		<div class="container" id="containertophome">
+			<div id="carouselId" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators" id="cindicator">
+					<li data-target="#carouselId" data-slide-to="0" class="active"></li>
+					<li data-target="#carouselId" data-slide-to="1"></li>
+					<li data-target="#carouselId" data-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner" role="listbox">
+					<div class="carousel-item active">
+						<div class="card text-white" id="cardHome">
+							<div class="card-body">
+								<h4 class="card-title">
+									Formations certifiantes
+								</h4>
+								<h5 class="h5Home">
+									Objectif :
+								</h5>
+								<p class="mt-auto">
+									Titre professionnel :
+									<br/>
+									- Secrétaire comptable
+									<br/>
+									- Assistant(e) Ressources Humaines
+									<br/>
+									- Formateur d'adultes
+									<br/>
+									- Employé(e) Administratif(ve) et d'accueil
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="card text-white" id="cardHome">
+							<div class="card-body">
+								<h4 class="card-title">
+									Formations individualisées
+								</h4>
+								<h5 class="h5Home">
+									Objectif :
+								</h5>
+								<p class="card-text mt-auto">
+									- Augmenter en compétences sur son poste de travail
+									<br/>
+									- Développer ses compétences pour être employable
+									<br/>
+									- Mieux appréhender le milieu professionnel
+									<br/>
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="carousel-item">
+						<div class="card text-white" id="cardHome">
+							<div class="card-body">
+								<h4 class="card-title">
+									Accompagnement à la validation des acquis par l'expérience
+																		                (V.A.E)
+								</h4>
+								<h5 class="h5Home">
+									Objectif :
+								</h5>
+								<p class="card-text mt-auto">
+									À travers une feuille de route un programme d'accompagnement est
+																		                mis en place :
+									<br/>
+									- Définition du diplôme
+									<a href="https://www.francecompetences.fr/" target="_blank">
+										Lien vers francecompetences.fr
+									</a>
+									<br/>
+									- Aide à la rédaction du livret 1
+									<br/>
+									- Aide à la rédaction du livret 2
+									<br/>
+									- Préparation à l'oral
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+			</div>
+			<a href="{{ path('formation') }}" class="btn btn-outline-warning mt-auto" id="btnHomeInscription">
+				Consulter le catalogue
+			</a>
+		</div>
+	</section>
+	<section>
+		<div class="container-fluid" id="home_com">
+			<p>
+      <br/>
+				« Réussir votre entrée dans la vie professionnel
+        avec SCP Formation »
+			</p>
+			
+		</div>
+		<img src="{{asset('img/homeimg.jpg')}}"  alt="">
+		<div class="container-fluid" id="home_com">
+			<p>
+      <br/>
+				Pour plus d'information , sur votre projet et votre moyen de financement veuillez prendre un rendez-vous :
+				<br/>
+				
+			</p>
+			
+		</div>
+		<hr>
+		<div class="container-fluid" id="home_com2">
+			<p>
+      <br/>
+				Afin de respecter les gestes barrières , les cours de formation se feront à distance et en présentiel .
+			</p>
+			<img src="{{asset('img/covid.png')}}" class="img_home_com" alt="">
+		</div>
+		
+		
+	</section>
+{% endblock %}

@@ -207,10 +207,6 @@ body {
 /* version mobile */
 @media only screen and (max-width: 600px) {
   /* home page */
-
-  #card_formation_top {
-    font-size: 16px;
-    }
   #img_card {
     width: 100%;
     height: 100%;  

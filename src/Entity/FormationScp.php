@@ -28,14 +28,24 @@ class FormationScp
     private $info;
 
     /**
-     * @ORM\Column(type="string", length=255 , nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
-    private $image;
+    private $plaquette;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $plaquette;
+    private $planning;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $prerequis;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $dureeFormation;
 
     public function getId(): ?int
     {
@@ -66,17 +76,6 @@ class FormationScp
         return $this;
     }
 
-    public function getImage(): ?string
-    {
-        return $this->image;
-    }
-
-    public function setImage(string $image): self
-    {
-        $this->image = $image;
-
-        return $this;
-    }
 
     public function getPlaquette(): ?string
     {
@@ -86,6 +85,42 @@ class FormationScp
     public function setPlaquette(string $plaquette): self
     {
         $this->plaquette = $plaquette;
+
+        return $this;
+    }
+
+    public function getPlanning(): ?string
+    {
+        return $this->planning;
+    }
+
+    public function setPlanning(string $planning): self
+    {
+        $this->planning = $planning;
+
+        return $this;
+    }
+
+    public function getPrerequis(): ?string
+    {
+        return $this->prerequis;
+    }
+
+    public function setPrerequis(string $prerequis): self
+    {
+        $this->prerequis = $prerequis;
+
+        return $this;
+    }
+
+    public function getDureeFormation(): ?string
+    {
+        return $this->dureeFormation;
+    }
+
+    public function setDureeFormation(string $dureeFormation): self
+    {
+        $this->dureeFormation = $dureeFormation;
 
         return $this;
     }

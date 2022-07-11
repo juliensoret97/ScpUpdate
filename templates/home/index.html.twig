@@ -5,133 +5,129 @@
 {% endblock %}
 
 {% block body %}
-	<section class="sectiontophome">
-		<h1 class="m-3" style="color:white">
-			Formations actuellement en cours !
-		</h1>
-		<div class="container" id="containertophome">
-			<div id="carouselId" class="carousel slide" data-ride="carousel">
-				<ol class="carousel-indicators" id="cindicator">
-					<li data-target="#carouselId" data-slide-to="0" class="active"></li>
-					<li data-target="#carouselId" data-slide-to="1"></li>
-					<li data-target="#carouselId" data-slide-to="2"></li>
-				</ol>
-				<div class="carousel-inner" role="listbox">
-					<div class="carousel-item active">
-						<div class="card text-white" id="cardHome">
-							<div class="card-body">
-								<h4 class="card-title">
-									Formations certifiantes
-								</h4>
-								<h5 class="h5Home">
-									Objectif :
-								</h5>
-								<p class="mt-auto">
-									Titre professionnel :
-									<br/>
-									- Secrétaire comptable
-									<br/>
-									- Assistant(e) Ressources Humaines
-									<br/>
-									- Formateur d'adultes
-									<br/>
-									- Employé(e) Administratif(ve) et d'accueil
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<div class="card text-white" id="cardHome">
-							<div class="card-body">
-								<h4 class="card-title">
-									Formations individualisées
-								</h4>
-								<h5 class="h5Home">
-									Objectif :
-								</h5>
-								<p class="card-text mt-auto">
-									- Augmenter en compétences sur son poste de travail
-									<br/>
-									- Développer ses compétences pour être employable
-									<br/>
-									- Mieux appréhender le milieu professionnel
-									<br/>
-								</p>
-							</div>
-						</div>
-					</div>
-					<div class="carousel-item">
-						<div class="card text-white" id="cardHome">
-							<div class="card-body">
-								<h4 class="card-title">
-									Accompagnement à la validation des acquis par l'expérience
-																											                (V.A.E)
-								</h4>
-								<h5 class="h5Home">
-									Objectif :
-								</h5>
-								<p class="card-text mt-auto">
-									À travers une feuille de route un programme d'accompagnement est
-																											                mis en place :
-									<br/>
-									- Définition du diplôme
-									<a href="https://www.francecompetences.fr/" target="_blank">
-										Lien vers francecompetences.fr
-									</a>
-									<br/>
-									- Aide à la rédaction du livret 1
-									<br/>
-									- Aide à la rédaction du livret 2
-									<br/>
-									- Préparation à l'oral
-								</p>
-							</div>
-						</div>
+<div class="container-fluid">
+	<div id="carouselId" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators" id="cindicator">
+			<li data-target="#carouselId" data-slide-to="0" class="active"></li>
+			<li data-target="#carouselId" data-slide-to="1"></li>
+			<li data-target="#carouselId" data-slide-to="2"></li>
+			<li data-target="#carouselId" data-slide-to="3"></li>
+		</ol>
+		<div class="carousel-inner" role="listbox">
+			<div class="carousel-item active">
+				<div class="card text-white" id="cardHome" style="background-image:url(img/comptableCarousel.jpg)">
+					<div class="card-body" id="cardbodyCarousel">
+						<h4 class="card-title mt-auto" style="font-weight: bold;">
+							TP Secrétaire comptable (RNCP1212)
+						</h4>
+						<p class="card-text mt-auto" style="font-weight:bold">
+							Date : Septembre 2022
+
+							<br/>
+							L'emploi de secrétaire comptable est à la jonction des métiers de secrétaire et de comptable.
+							<br/>
+							Il se caractérise par une combinaison d'activités relevant de ces deux domaines au sein du même emploi.
+						</p>
+						<a href="{{ path('formation_scp_index')}}" class="btn btn-info btn-sm">En savoir plus</a>
 					</div>
 				</div>
-				<a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
-					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-					<span class="sr-only">Previous</span>
-				</a>
-				<a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
-					<span class="carousel-control-next-icon" aria-hidden="true"></span>
-					<span class="sr-only">Next</span>
-				</a>
 			</div>
-			<a href="{{ path('formation_scp_index') }}" class="btn btn-outline-warning mt-auto" id="btnHomeInscription">
-				Consulter le catalogue
-			</a>
-		</div>
-	</section>
-	<section>
-		<div class="container-fluid" id="home_com">
-			<p>
-				<br/>
-				« Réussir votre entrée dans la vie professionnel
-				        avec SCP Formation »
-			</p>
+			<div class="carousel-item">
+				<div class="card text-white" id="cardHome" style="background-image:url(img/rhAccueill.jpg)">
+					<div class="card-body" id="cardbodyCarousel">
+						<h4 class="card-title mt-auto" style="font-weight: bold;">
+							TP Assistant(e) Ressources Humaines (RNCP6161)
+						</h4>
+						<p class="card-text mt-auto" style="font-weight:bold">
+							Date : Septembre 2022
 
-		</div>
-		<img src="{{asset('img/homeimg.jpg')}}" alt="" id="big_img_acc">
-		<div class="container-fluid" id="home_com">
-			<p>
-				<br/>
-				Pour plus d'information , sur votre projet et votre moyen de financement veuillez prendre un rendez-vous au :
-				<br/>
-				<i class="fa-solid fa-phone"><a href="tel:0262707967">0262 70 79 64</a></i>
-				<br/>
-			</p>
+							<br/>
+							L'assistant (e) ressources humaines seconde son responsable dans l'administration du personnel et la mise en œuvre de la politique de développement des ressources humaines. 
+						</p>
+						<a href="{{ path('formation_scp_index')}}" class="btn btn-info btn-sm">En savoir plus</a>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="card text-white" id="cardHome" style="background-image:url(img/comptableAssisst.jpg)">
+					<div class="card-body" id="cardbodyCarousel">
+						<h4 class="card-title mt-auto" style="font-weight: bold;">
+							TP Comptable assistant (RNCP5881)
+						</h4>
+						<p class="card-text mt-auto" style="font-weight:bold">
+							Date : Septembre 2022
 
+							<br/>
+							Cet emploi comprend l'ensemble des travaux de base de la fonction comptable. 
+							<br/>
+							Ces travaux sont constitués, pour l'essentiel, de traitements et de saisies d'informations à caractère financier.
+						</p>
+						<a href="{{ path('formation_scp_index')}}" class="btn btn-info btn-sm">En savoir plus</a>
+					</div>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<div class="card text-white" id="cardHome" style="background-image:url(img/secretaireAssist.jpg)">
+					<div class="card-body" id="cardbodyCarousel">
+						<h4 class="card-title mt-auto" style="font-weight: bold;">
+							TP Secrétaire assistant (RNCP193)
+						</h4>
+						<p class="card-text mt-auto" style="font-weight:bold">
+							Date : Septembre 2022
+
+							<br/>
+							L'emploi de secrétaire assistant se caractérise par une grande polyvalence. 
+							<br/>
+							Le secrétaire assistant joue un rôle essentiel dans le fonctionnement d'un service ou d'une entreprise, ses missions se situant au cœur de l'activité quotidienne.
+						</p>
+						<a href="{{ path('formation_scp_index')}}" class="btn btn-info btn-sm">En savoir plus</a>
+					</div>
+				</div>
+			</div>
 		</div>
-		<hr>
-		<div class="container-fluid" id="home_com2">
-			<p>
-				<br/>
-				Afin de respecter les gestes barrières , les cours de formation se feront à distance et en présentiel .
-			</p>
-			<img src="{{asset('img/covid.png')}}" class="img_home_com" alt="">
-		</div>
+		<a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
 
 
-	</section>
+
+		<section>
+			<div class="container-fluid" id="home_com2">
+				<img src="{{asset('img/reussite.png')}}" class="img_home_com" alt="">
+				<h1>TP Assistant Ressources Humaines</h1>
+				<p>Session d'examen : 09/2021
+				</p>
+			</div>
+			<img src="{{asset('img/homeimg.jpg')}}" alt="" id="big_img_acc">
+			<div class="container-fluid" id="home_com">
+				<p>
+					<br/>
+					Pour plus d'information , sur votre projet et votre moyen de financement veuillez prendre un rendez-vous au :
+					<br/>
+					<i class="fa-solid fa-phone">
+						<a href="tel:0262707967">0262 70 79 64</a>
+					</i>
+					<br/>
+				</p>
+
+			</div>
+			<hr>
+			<div class="container-fluid" id="home_com">
+				<p>
+					<br/>
+					« Réussir votre entrée dans la vie professionnel
+																	        avec SCP Formation »
+				</p>
+
+			</div>
+
+
+		</section>
+	</div>
+</div>
 {% endblock %}

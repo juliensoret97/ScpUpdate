@@ -6,30 +6,32 @@
 {% block body %}
 
 	<div class="container">
-		<h1 class="h1 mt-3">Formation disponible chez nous :</h1>
+		<h1 class="h1 mt-3" id="titreFormation">Titre Professionnel (TP) disponible :</h1>
 		<hr>
 		<div class="container">
 			<div class="row mt-3 ml-3">
 				{% for formation_scp in formation_scps %}
-					<div class="col-sm-6">
+					<div class="col-sm-6" id="adjustCardPhone">
 						<div class="container mt-5">
 							<div class="card m-3" id="card_formation_top">
-								<div class="card-body text-center d-flex flex-column">
+								<div class="card-body text-center d-flex flex-column" style="height : 0rem; margin-top: 5px">
 									<div class="card-title">
 										<h5>
 											{{ formation_scp.titre }}
 										</h5>
 										<hr>
 									</div>
-
-									<div class="container">
-										<img class="card-img-top mx-auto d-block" src="{{ asset('img/' ~ formation_scp.image) }}" id="img_card"/>
-									</div>
 								</div>
-								<div class="card-body" style="text-align: left;  font-size: 16px;">
-									{{ formation_scp.info }}
+								<div class="card-body" >
+									<p class="subTitleCard">Objectif : </p><p class="card-text mt-auto">{{ formation_scp.info }}<p>
+	
+									<p class="subTitleCard">Prérequis : </p><p class="card-text mt-auto">{{ formation_scp.prerequis }}</p>
+									
+									<p class="subTitleCard">Durée de la formation : </p><p class="card-text mt-auto"> {{ formation_scp.dureeFormation }}</p>
+									
+									<p class="subTitleCard">Financement : </p><p class="card-text mt-auto">Pole Emploi, Opco</p>
+									<a href="{{ path('formation_scp_show', {'id':formation_scp.id})}}" class="btn btn-info">Voir la carte</a>
 								</div>
-								<a href="{{ asset('pdf/' ~ formation_scp.plaquette)}}" target="blank" class="btn btn-warning mt-auto" id="p-formation">Voir plus</a>
 							</div>
 						</div>
 					</div>

@@ -59,7 +59,6 @@ class AdminController extends AbstractController
             $data = $form->getData();
             $em->persist($data);
             $em->flush();
-            dd($data);
 
         }
 

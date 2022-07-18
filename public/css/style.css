@@ -5,64 +5,6 @@ body {
   
 }
 
-.hero{
-  height: 100vh;
-  width: 100%;
-  background-image: url(../img/rhAccueil.jpg);
-  background-size:cover;
-  background-position: center;
-}
-
-nav{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 45px ;
-  padding-left: 8%;
-  padding-right: 8%;
-}
-
-nav ul li {
-  list-style-type: none;
-  display: inline-block;
-  padding: 10px 25px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: capitalize;
-}
-
-nav ul li a:hover {
-  color: #2c77bc;
-  transition: .4s;
-  text-decoration: none;
-}
-
-.btnInscription {
-  background-color: #2c77bc;
-  color: white;
-  text-decoration: none;
-  border: 2px solid transparent;
-  font-weight: bold;
-  padding: 10px 25px;
-  border-radius: 30px;
-  transition: transform .4s;
-}
-
-.btnInscription:hover {
-  transform: scale(1.2);
-  text-decoration: none;
-}
-
-.logo{
-  color: white;
-  font-size: 35px;
-  letter-spacing: 1px;
-  cursor: pointer;
-}
 
 * {
   font-family: Montserrat, sans-serif;
@@ -74,6 +16,11 @@ nav ul li a:hover {
   width: 150px;
 }
 
+#fcb {
+  height: 50px;
+  width: 100%;
+}
+
 #haut_page {
   background-color:#2c77bc ;
   color: white;
@@ -82,11 +29,16 @@ nav ul li a:hover {
   width: 25px;
 }
 
+.infoHome{
+  font-style: italic;
+}
+
 #home_com{
   height: 13vh;
   text-align: center;
   font-size: 24px;
   align-items: center;
+  margin-bottom: 25px;
 }
 #home_com2{
   height: 40vh;
@@ -95,40 +47,77 @@ nav ul li a:hover {
   align-items: center;
 }
 
+.carousel slide{
+  height: 100%;
+  margin-top: 0;
+}
+
+#cindicator{
+  top: 0;
+  height: 30px;
+}
+
+#carouselId{
+  width: auto;
+}
+#img_carroussel{
+  width: 25px;
+  height: 25px;
+}
+
 .img_home_com{
   width: 300px;
   height: 200px;
 }
 .sectiontophome{
-  background-color: #2c77bc;
+  height: 100%;
   margin: 5px;
   text-align: center;
   min-height: 50vh;
   padding: 2%;
 }
 
-.card-body {
-  text-align: center;
+.caroussel-item {
+  height: 32rem;
+  color: white;
+  position: relative;
+ 
+}
+#cardbodyCarousel {
+  text-align: left;
+  padding-left: 25%;
+  height: 45%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right:0;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 #containertophome {
   text-align: center;
+  height: 42rem;
+  width: auto;
 }
 
 #cardHome {
-  background-color: #2c77bc;
-  border: solid 3px;
-  border-radius: 5%;
-  height: 16rem;
-  margin-bottom: 5px;
+  background-position: center;
+  background-size: cover;
+  height: 50rem;
+  margin-bottom: 0;
+  border-radius: 0;
+  
 }
+
+
 
 .h5Home {
   color: white;
 }
 
 #cindicator {
-  margin-bottom: 0;
+  bottom:0;
 }
 
 #h6_home {
@@ -236,8 +225,13 @@ nav ul li a:hover {
   height: 200px;  
 }
 
+.card-body{
+  text-align: left;
+  font-size: 16px;
+}
+
 #card_formation_top {
-  height: 40rem;
+  height: 45rem;
   flex-basis: 50px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
@@ -245,11 +239,9 @@ nav ul li a:hover {
 #card_formation_top:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-#card_formation_middle {
-  height: 25rem;
-}
-#card_formation_bot {
-  height: 23rem;
+
+.subTitleCard{
+  font-weight: bold ;
 }
 
 #p-formation {
@@ -269,34 +261,76 @@ nav ul li a:hover {
 
 /* version mobile */
 @media only screen and (max-width: 600px) {
+  /* carousel*/
+  #cardbodyCarousel {
+    height: 100%;
+  }
+
+  #h1Carousel{
+    font-size: 16px;
+  }
+  #tpCaroussel{
+    font-size: 12px;
+  }
+  #carouselId{
+    height: auto;
+  }
+
+
+
   /* home page */
+
+  
   #img_card {
     width: 100%;
     height: 100%;  
   }
   #big_img_acc {
-    width: 100%;
-    height: 10rem;
+    display:none;
   }
 
   #home_com{
-    height: 13vh;
+    position: relative;
+    height: 15vh;
     font-size: 16px;
+    top:0;
+    bottom: 0;
   }
   #home_com2{
-    height: 40vh;
+    height: 35vh;
     
     font-size: 16px;
+  }
+
+  hr {
+    margin-top: 3rem;
   }
   
   .img_home_com{
     width: 50%;
     height: 10rem;
+    
   }
   #cardHome {
     background-color: #2c77bc;
     height: 22rem;
+    
   }
+  .card-body{
+    font-size: 12px;
+  }
+  #card_formation_top{
+    width: 110%;
+  }
+
+  #adjustCardPhone{
+    margin: 0 50% 0 0;
+    
+  }
+  #titreFormation{
+    font-size: 20px;
+  }
+  
   #rowPropos {
     display: none;
   }
@@ -308,9 +342,7 @@ nav ul li a:hover {
     height: 100px;
   }
 
-  #jumbotron-b {
-    height: 95vh;
-  }
+
 
   #h6_home {
     color: white;

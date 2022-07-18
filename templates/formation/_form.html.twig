@@ -1,24 +1,25 @@
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
 {{ form_start(form) }}
 <div class="col">
   <div class="row m-2">
-    <label for="prenom">Votre nom :</label>
+    <label for="prenom">Nom :</label>
     {{ form_widget(form.nom) }}
   </div>
   <div class="row m-2">
-    <label for="prenom">Votre prénom :</label>
+    <label for="prenom">Prénom :</label>
     {{ form_widget(form.prenom) }}
   </div>
   <div class="row m-2">
-    <label for="prenom">Votre numéro de téléphone :</label>
+    <label for="prenom">Téléphone :</label>
     {{ form_widget(form.numero) }}
   </div>
   <div class="row m-2">
-    <label for="prenom">Votre email:</label>
+    <label for="prenom">Email:</label>
     {{ form_widget(form.email) }}
   </div>
   <div class="row m-2">
-    <label for="prenom">Votre choix de formation :</label>
-    {{ form_widget(form.choix) }}
+    <label for="prenom">Formation :</label>
+    {{ form_widget(form.formationScp) }}
   </div>
   <div class="row m-2">
     {{

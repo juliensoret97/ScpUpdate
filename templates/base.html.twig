@@ -17,7 +17,7 @@
 			<link rel="stylesheet" href="https://bootswatch.com/4/lux/bootstrap.min.css"/>
 			<link rel="stylesheet" href="{{ asset('css/style.css') }}"/>
 			<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"/>
-			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+			<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		{% endblock %}
 
@@ -28,7 +28,7 @@
 			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 			<script src="https://kit.fontawesome.com/02363f4e09.js" crossorigin="anonymous"></script>
 		{% endblock %}
-		{# <div class="container-fluid" id="haut_page">
+		<div class="container-fluid" id="haut_page">
 			<div class="row">
 				<div class="col-sm-4">
 					<i class="fa-solid fa-phone">
@@ -43,70 +43,46 @@
 			</div>
 		</div>
 
-		 <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-					<a href="{{ path('home') }}"><img src="{{ asset('img/logo.PNG') }}" id="logo"/></a>
-					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<div class="collapse navbar-collapse ml-5" id="navbarColor01">
-						<ul class="navbar-nav mr-auto">
-							<li class="nav-item active ml-3">
-								<a class="nav-link" href="{{ path('home') }}">
-									Accueil
-									<span class="sr-only">(current)</span>
-								</a>
-							</li>
-							<li class="nav-item active ml-3">
-								<a class="nav-link" href="{{ path('formation_scp_index') }}">
-									Nos Formations
-									<span class="sr-only">(current)</span>
-								</a>
-							</li>
-							<li class="nav-item active ml-3">
-								<a class="nav-link" href="{{ path('a_propos') }}">
-									Qui sommes-nous ?
-									<span class="sr-only">(current)</span>
-								</a>
-							</li>
-							<li class="nav-item active ml-3">
-								<a class="nav-link" href="{{ path('formation_new') }}">
-									Inscription
-									<span class="sr-only">(current)</span>
-								</a>
-							</li>
-							{# <li class="nav-item dropdown">
-												      <a class="nav-link dropdown-toggle" href="{{ path('formation') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black">          Formation        </a>
-												      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-												      <a class="dropdown-item" href="{{ path('formation_scp_index') }}">Voir plus</a>
-													  <hr class="my-1">
-												      <a class="dropdown-item" href="{{ path('formation_new') }}">S'inscrire</a>
-												   </li> #}
-		{# <li class="nav-item dropdown">
-												      <a class="nav-link dropdown-toggle" href="{{ path('formation') }}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color:black">          Soutien        </a>
-												      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-												         <a class="dropdown-item" href="{{ path('soutien_index') }}">Voir plus</a>
-														 <hr class="my-1">
-												         <a class="dropdown-item" href="{{ path('soutien_new') }}">S'inscrire</a>
-												   </li> 
-						</ul>
-						<ul class="nav justify-content-center">
-							<li class="nav-item">
-								<a href="" target="_blank"><img src="{{ asset('img/qualiopi.PNG') }}" id="logo"/></a>
-							</li>
-						</ul>
-						<ul>
-															           
-															<li class="nav-item"><a class="btn btn-outline-danger" href="{{ path('app_login') }}">Se connecter</a></li>
-															          {% if app.user %}            
-															<a href="{{ path('app_logout') }}" class="btn btn-danger">              Se déconnecter            </a>
-															          {% else %}            
-															<a class="btn btn-outline-success" href="{{ path('app_login') }}">              Se connecter            </a>
-															          {% endif %}          {% if is_granted('ROLE_ADMIN') %}            
-															<a class="m-3" href="{{ path('admin_home') }}"><img src="https://img.icons8.com/material-rounded/24/4a90e2/admin-settings-male.png" id="logoa" /></a>
-															          {% endif %}        
-														</ul> 
-					</div>
-				</nav> #}
+		<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+			<a href="{{ path('home') }}"><img src="{{ asset('img/logo.PNG') }}" id="logo"/></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse ml-5" id="navbarColor01">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active ml-3">
+						<a class="nav-link" href="{{ path('home') }}">
+							Accueil
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item active ml-3">
+						<a class="nav-link" href="{{ path('formation_scp_index') }}">
+							Nos Formations
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item active ml-3">
+						<a class="nav-link" href="{{ path('a_propos') }}">
+							Qui sommes-nous ?
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					
+				</ul>
+				<ul class="nav justify-content-center">
+				<li class="nav-item active ml-3">
+						<a class="btn btn-info" href="{{ path('formation_new') }}">
+							Inscription
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="" target="_blank"><img src="{{ asset('img/qualiopi.PNG') }}" id="logo"/></a>
+					</li>
+				</ul>
+			</div>
+		</nav>
 	</head>
 	<body>
 		{% block body %}{% endblock %}
@@ -124,7 +100,10 @@
 				</h5>
 				<!-- Facebook -->
 				<a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/SC-PRINT-Formation-100784765638974" role="button" target="_blank">
-					<i class="fab fa-facebook-f"></i>
+					<img src="{{asset('img/fcb.png')}}" alt="" id="fcb">
+				</a>
+				<a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/scpformation/?hl=fr" role="button" target="_blank">
+					<img src="{{asset('img/insta.png')}}" alt="" id="fcb">
 				</a>
 
 			</section>
@@ -160,6 +139,11 @@
 						<br>
 						<a id="link_bas_page">
 							<a href="tel:0262707967" style="color : white">0262 70 79 64</a>
+<<<<<<< HEAD
+=======
+							<br>
+							<a href="tel:0262250309" style="color : white">0262 25 03 09</a>
+>>>>>>> f44ab8923f0c085e5c50cca7296007d02f6e35ed
 						</a>
 					</div>
 					<div class="col-lg-4 col-md-7 mb-2 mb-md-0" id="col_bas_page">

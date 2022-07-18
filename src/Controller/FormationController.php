@@ -56,14 +56,6 @@ class FormationController extends AbstractController
             $entityManager->persist($formation);
             $entityManager->flush();
 
-            $email = new Email();
-            $email->from(new Address('contact@mail.com', "info sur les inscris"))
-                  ->to("jujukakato@gmail.com")
-                  ->text("Une nouvelle inscription pour ". $formation->getChoix())
-                  ->subject("Inscription");
-    
-            $this->mailer->send($email);
-
             return $this->redirectToRoute('formation_scp_index');
         }
 

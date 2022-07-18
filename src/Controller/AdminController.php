@@ -8,11 +8,13 @@ use App\Entity\FormationScp;
 use App\Form\FormationScpType;
 use App\Repository\SoutienRepository;
 use App\Repository\FormationRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\File\Exception\FileException;
+use Symfony\Component\Form\FormFactoryInterface;
+
 
 /**
  * @Route("/admin")
@@ -42,63 +44,28 @@ class AdminController extends AbstractController
     /**
      * @Route("/new/formation", name="formation_scp_new", methods={"GET","POST"})
      */
-    public function newFormation(Request $request): Response
+    public function newFormation(FormFactoryInterface $factory, Request $request,EntityManagerInterface $em) 
     {
-        $formationScp = new FormationScp();
-        $form = $this->createForm(FormationScpType::class, $formationScp);
+
+        $builder = $factory->createBuilder(FormationScpType::class);
+
+        
+
+        $form = $builder->getForm();
+
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $photo = $form->get('image')->getData();
+        if($form->isSubmitted()) {
+            $data = $form->getData();
+            $em->persist($data);
+            $em->flush();
 
-            if ($photo) {
-                $originalFilename = $photo->getClientOriginalName();
-
-                // Move the file to the directory where brochures are stored
-                try {
-                    $photo->move(
-                        $this->getParameter('brochures_directory'),
-                        $originalFilename
-                    );
-                } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
-                }
-
-                // updates the 'brochureFilename' property to store the PDF file name
-                // instead of its contents
-                $formationScp->setImage($originalFilename);
-            }
-
-            $plaquette = $form->get('plaquette')->getData();
-
-            if ($plaquette) {
-                $originalFilename = $plaquette->getClientOriginalName();
-
-                // Move the file to the directory where brochures are stored
-                try {
-                    $plaquette->move(
-                        $this->getParameter('brochures_directoryii'),
-                        $originalFilename
-                    );
-                } catch (FileException $e) {
-                    // ... handle exception if something happens during file upload
-                }
-
-                // updates the 'brochureFilename' property to store the PDF file name
-                // instead of its contents
-                $formationScp->setPlaquette($originalFilename);
-            }
-            
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($formationScp);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('formation_scp_index');
         }
 
+        $formView = $form->createView();
+
         return $this->render('formation_scp/new.html.twig', [
-            'formation_scp' => $formationScp,
-            'form' => $form->createView(),
+            'formView' => $formView
         ]);
     }
 
@@ -123,15 +90,6 @@ class AdminController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/formation/{id}", name="formation_show", methods={"GET"})
-     */
-    public function showFormation(Formation $formation): Response
-    {
-        return $this->render('formation/show.html.twig', [
-            'formation' => $formation,
-        ]);
-    }
 
     /**
      * @Route("/formation/{id}", name="formation_delete", methods={"DELETE"})

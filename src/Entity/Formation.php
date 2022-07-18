@@ -37,10 +37,11 @@ class Formation
      */
     private $email;
 
+
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity=FormationScp::class, inversedBy="formations")
      */
-    private $choix;
+    private $formationScp;
 
     public function getId(): ?int
     {
@@ -95,15 +96,15 @@ class Formation
         return $this;
     }
 
-    public function getChoix(): ?string
+    public function getFormationScp(): ?FormationScp
     {
-        return $this->choix;
+        return $this->formationScp;
     }
 
-    public function setChoix(string $choix): self
+    public function setFormationScp(?FormationScp $formationScp): self
     {
-        $this->choix = $choix;
+        $this->formationScp = $formationScp;
 
         return $this;
-    }
+    }   
 }

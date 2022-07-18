@@ -1,6 +1,28 @@
-{{ form_start(form) }}
-{{ form_errors(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+{# {{ form(formView)}} #}
+{# <button class="btn btn-success">{{ button_label|default('Save') }}</button> #}
+{% form_theme formView 'bootstrap_4_layout.html.twig' %}
+	<div class="container-fluid">
+	{{form_start(formView)}}
+	{{form_errors(formView)}}
+
+    <div class="row">
+        <div class="col">
+            {{form_row(formView.titre)}}
+            {{form_row(formView.info)}}
+            {{form_row(formView.prerequis)}}
+            {{form_row(formView.dureeFormation)}}
+        </div>
+        <div class="col">
+            {{form_row(formView.planning)}}
+            {{form_row(formView.plaquette)}}
+        </div>
+    </div>
+	
+
+	<button type="submit" class="btn btn-success">
+		<i class="fas fa-save"></i>
+		Créer le Titre professionel
+	</button>
+	{{form_end(formView)}}
+</div>
 
